@@ -24,8 +24,8 @@ async def process_document(file: UploadFile = File(...), num_of_entries: Optiona
         with open(file_path, "wb") as f:
             content = await file.read()
             f.write(content)
-    except Exception:
-        return {"message": "There was an error uploading the file"}
+    except Exception as e:
+        return {"message": f"There was an error uploading the file, {e}"}
     finally:
         file.file.close()
     return format_word_counts(file_path, num_of_entries)
