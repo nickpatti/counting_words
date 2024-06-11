@@ -1,4 +1,9 @@
 ### Running on Heroku ###
+- Run the below command in your terminal, replacing <num_of_entries> with the amount of words you want in the string, and <path_to_file> with a path to the local txt file.
+`curl -s -X POST "https://count-words-20ffa665a447.herokuapp.com/word_count/?num_of_entries=<number_of_entries>" -F "file=@<path_to_file>" | sed 's/\\n/\n/g'`
+
+
+- To test, run `curl -s -X POST "https://count-words-20ffa665a447.herokuapp.com/run-tests/`
 
 
 ### Running Locally ###
